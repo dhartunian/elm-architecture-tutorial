@@ -1,4 +1,4 @@
-module Counter where
+module Counter (Model, init, Action, update, view) where
 
 import Html exposing (..)
 import Html.Attributes exposing (style)
@@ -6,18 +6,12 @@ import Html.Events exposing (onClick)
 import StartApp
 
 
-main =
-  StartApp.start
-    { model = 0
-    , update = update
-    , view = view
-    }
-
-
 -- MODEL
 
 type alias Model = Int
 
+init: Int -> Model
+init start = start
 
 -- UPDATE
 
